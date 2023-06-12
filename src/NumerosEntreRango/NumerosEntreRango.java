@@ -43,21 +43,21 @@ public class NumerosEntreRango {
      * @return Una lista de números entre numero1 y numero2.
      */
     public static List<Integer> obtenerNumerosEntreRango(int numero1, int numero2) {
-        List<Integer> numerosEntreRango = new ArrayList<>();
+        List<Integer> numerosImpares = new ArrayList<>();
 
-        // Verificar si se debe intercambiar el orden de los números
-        if (numero1 > numero2) {
-            int temp = numero1;
-            numero1 = numero2;
-            numero2 = temp;
+        // Verificar si el primer número es mayor o igual al segundo número
+        if (numero1 >= numero2) {
+            return numerosImpares;
         }
-
-        // Agregar los números al rango (sin incluir los números de entrada)
+        
+        // Iterar desde el primer número hasta el segundo número - 1
         for (int i = numero1 + 1; i < numero2; i++) {
-            numerosEntreRango.add(i);
+            if (i % 2 != 0) { // Verificar si el número es impar
+                numerosImpares.add(i);
+            }
         }
 
-        return numerosEntreRango;
+        return numerosImpares;
     }
 }
 
