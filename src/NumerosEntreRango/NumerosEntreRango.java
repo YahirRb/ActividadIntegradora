@@ -45,11 +45,13 @@ public class NumerosEntreRango {
     public static List<Integer> obtenerNumerosEntreRango(int numero1, int numero2) {
 
         List<Integer> numerosImpares = new ArrayList<>();
-
         // Verificar si el primer número es mayor o igual al segundo número
         if (numero1 >= numero2) {
             return numerosImpares;
-
+        }
+        
+        // Iterar desde el primer número hasta el segundo número - 1
+        for (int i = numero1 + 1; i < numero2; i++) {
             if (i % 2 != 0) { // Verificar si el número es impar
                 numerosImpares.add(i);
             }
